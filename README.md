@@ -1,0 +1,1 @@
+# Streamerbot-Shortcut-Helper
