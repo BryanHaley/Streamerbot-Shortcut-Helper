@@ -36,22 +36,19 @@ def all_balls(): # "All balls" == all zeroes
 
 # Callback for when a key is pressed
 def on_press(key):
-    try:
-        dummy_test = key.char # We don't care about any "normal" keys
-    except AttributeError:
-        # Update our key monitor dictionary with the current state of the key
-        if key == keyboard.Key.shift:
-            KEY_MONITOR["LeftShift"] = True
-        elif key == keyboard.Key.shift_r:
-            KEY_MONITOR["RightShift"] = True
-        elif key == keyboard.Key.ctrl_l:
-            KEY_MONITOR["LeftCtrl"] = True
-        elif key == keyboard.Key.ctrl_r:
-            KEY_MONITOR["RightCtrl"] = True
-        elif key == keyboard.Key.alt_l:
-            KEY_MONITOR["LeftAlt"] = True
-        elif key == keyboard.Key.alt_gr:
-            KEY_MONITOR["RightAlt"] = True
+    # Update our key monitor dictionary with the current state of the key
+    if key == keyboard.Key.shift:
+        KEY_MONITOR["LeftShift"] = True
+    elif key == keyboard.Key.shift_r:
+        KEY_MONITOR["RightShift"] = True
+    elif key == keyboard.Key.ctrl_l:
+        KEY_MONITOR["LeftCtrl"] = True
+    elif key == keyboard.Key.ctrl_r:
+        KEY_MONITOR["RightCtrl"] = True
+    elif key == keyboard.Key.alt_l:
+        KEY_MONITOR["LeftAlt"] = True
+    elif key == keyboard.Key.alt_gr:
+        KEY_MONITOR["RightAlt"] = True
 
 # Callback for when a key is released
 def on_release(key):
@@ -104,6 +101,8 @@ def listen_for_combo_on_port(port_num):
                     keyboard_controller.press(KeyCode.from_vk(key_combo[1]))
                     sleep(0.025)
                     keyboard_controller.release(KeyCode.from_vk(key_combo[1]))
+                else:
+                    sleep(0.025)
             
             # Sleep for the timeout duration (makes sure redeems don't get scammed)
             sleep(message["timeout"])
