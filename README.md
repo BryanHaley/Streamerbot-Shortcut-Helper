@@ -14,6 +14,7 @@ shortcut_handler.py receives a signal when you want to send a keyboard shortcut 
 pythonw.exe shortcut_handler.py <port numbers>
 pythonw.exe shortcut_handler_shutdown.py <port numbers>
 pythonw.exe shortcut_sender.py <port number> <keycode 1> <keycode 2> <optional: timeout>
+pythonw.exe shortcut_sender.py <port number> <keycode 1> <keycode 2> <timeout (default: 0.1)> repeater <seconds between repeats> # Used for debugging your setup
 ```
 
 For the purposes of demonstration, suppose you have two actions you want to trigger through keyboard shortcuts: activating a vtuber ('P' key), and activating an accessory on the vtuber ('Ctrl+P' key combo).
