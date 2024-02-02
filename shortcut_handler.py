@@ -110,7 +110,7 @@ def listen_for_combo_on_port(port_num):
             print(traceback.format_exc())
             sleep(0.1)
     print("Shutting down listener on port {}".format(port_num))
-    sock.close() # Technically, this probably never actually happens since you have to kill this in task manager, but whatever it's UDP
+    sock.close()
 
 if __name__ == "__main__":
     # Get port numbers from CLI args
